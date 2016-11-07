@@ -39,7 +39,9 @@ function onRun(context){
         var newImage = [[NSImage alloc] initByReferencingURL:url];
 
         var layer = [selection objectAtIndex:i];
-        layer.setName(user.name.first.toUpperCase() + " " + user.name.last.toUpperCase());
+        var firstName = user.name.first.replace(/\b\w/g, l => l.toUpperCase());
+        var lastName =  user.name.last.replace(/\b\w/g, l => l.toUpperCase());
+        layer.setName(firstName + " " + lastName);
 
         var fill = layer.style().fills().firstObject();
         fill.setFillType(4);
