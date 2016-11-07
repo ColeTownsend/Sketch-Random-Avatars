@@ -31,16 +31,15 @@ function onRun(context){
 
     if (data.results.length > 0) {
       for (var i=0; i <= selection.length; i++) {
-
         var randomIndex = Math.floor(Math.random()*(data.results.length-1));
-        log(randomIndex);
-        var imageURLString = data.results[randomIndex].picture.large;
+        var user = data.results[randomIndex];
+        var imageURLString = user.picture.large;
         var url = [[NSURL alloc] initWithString: imageURLString];
 
         var newImage = [[NSImage alloc] initByReferencingURL:url];
 
         var layer = [selection objectAtIndex:i];
-        layer.setName(data.results[randomIndex].name.first.toUpperCase() + " " + data.results[randomIndex].name.last.toUpperCase());
+        layer.setName(user.name.first.toUpperCase() + " " + user.name.last.toUpperCase());
 
         var fill = layer.style().fills().firstObject();
         fill.setFillType(4);
