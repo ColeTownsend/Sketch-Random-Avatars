@@ -1,0 +1,17 @@
+{
+    "name" : "Random User Avatars",
+    "identifier" : "coletownsend.sketch-random-avatar",
+    "version" : "1.0.0",
+    "description" : "Sketch plugin for loading user avatars from UI Faces API (http://uifaces.com/)",
+    "authorEmail" : "cole@coletownsend.com",
+    "author" : "Cole Townsend",
+    "commands" : [
+    {
+      "script" : "random-avatars.js",
+      "handler" : "onRun",
+      "shortcut" : "",
+      "name" : "Load random avatars",
+      "identifier" : "random-avatars"
+    }
+  ]
+}
